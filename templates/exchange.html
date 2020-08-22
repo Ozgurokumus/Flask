@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+
+{% block header %}
+
+<!-- MDBootstrap Datatables  -->
+<link href="{{ url_for('static', filename='datatables2.min.css') }}" rel="stylesheet">
+<script type="text/javascript" src="{{ url_for('static', filename='datatables2.min.js') }}"></script>
+
+<script>
+    $(document).ready(function () {
+        $('#dtBasicExample').DataTable();
+        $('.dataTables_length').addClass('bs-select');
+    });
+</script>
+{% endblock header %}
+
+{% block content %}
+<h1 class='mb-3'>Current Exchange Rates</h1>
+<table id="dtBasicExample" class="table" width="100%">
+  <thead>
+    <tr>
+      <th class="th-sm">Currency Pair</th>
+      <th class="th-sm">Rate</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for v,k in rates.items() %}
+        <tr>
+          <td>EUR-{{v}}</td>
+          <td>{{k}}</td>
+        </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock content %}
