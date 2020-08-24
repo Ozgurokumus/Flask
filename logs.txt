@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {'ip': '127.0.0.1', 'City': 'Unknown', 'Unix time': 1598194168, 'Browser': 'chrome', 'Platform': 'windows', 'Date': '2020-08-23 17:49:28'}
 {'ip': '127.0.0.1', 'City': 'Unknown', 'Unix time': 1598263072, 'Browser': 'chrome', 'Platform': 'windows', 'Date': '2020-08-24 12:57:52'}
 {'ip': '127.0.0.1', 'City': 'Unknown', 'Unix time': 1598263292, 'Browser': 'chrome', 'Platform': 'windows', 'Date': '2020-08-24 13:01:32'}
@@ -17,3 +18,6 @@
 {'ip': '127.0.0.1', 'City': 'Unknown', 'Unix time': 1598275995, 'Browser': 'chrome', 'Platform': 'windows', 'Date': '2020-08-24 16:33:15'}
 {'ip': '127.0.0.1', 'City': 'Unknown', 'Unix time': 1598276019, 'Browser': 'chrome', 'Platform': 'windows', 'Date': '2020-08-24 16:33:39'}
 {'ip': '127.0.0.1', 'City': 'Unknown', 'Unix time': 1598276350, 'Browser': 'chrome', 'Platform': 'windows', 'Date': '2020-08-24 16:39:10'}
+=======
+
+>>>>>>> 645f7a6d053ff4eaa55350c605a6249507941daf
