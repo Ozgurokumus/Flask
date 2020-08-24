@@ -38,10 +38,16 @@
               <a class="nav-item nav-link" href="{{ url_for('home') }}">Home</a>
               <a class="nav-item nav-link" href="{{ url_for('exchange') }}">Exchange</a>
               <a class="nav-item nav-link" href="{{ url_for('dictionary') }}">Dictionary</a>
+              <a class="nav-item nav-link" href="{{ url_for('dictionary_optional') }}">Dictionary-Optional</a>
             </div>
             <!-- Navbar Right Side -->
             <div class="navbar-nav">
+              {% if session.logged_in %}
+              <a class="nav-item nav-link" href="{{ url_for('logout') }}">Log out</a>
               <a class="nav-item nav-link" href="{{ url_for('logs') }}">Logs</a>
+              {% else%}
+              <a class="nav-item nav-link" href="{{ url_for('login') }}">Login</a>
+              {% endif %}
             </div>
           </div>
         </div>

@@ -1,5 +1,60 @@
 {% extends "layout.html" %}
 
+{% block header %}
+{% endblock header %}
+
 {% block content %}
-    <h1 class="text-center">Under Maintenance</h1>
-{% endblock %}
+<div class="container">
+    <br><br>
+    <div class="row">
+        <div class="col-5">
+            {% if mode == 1 %}
+                <h1>Türkçe</h1>
+            {% elif mode == -1 %}
+                <h1>English</h1>
+            {% endif %}
+            <br>
+            <form action="" method ="post">
+                <input class="translate" type="text" name="translate" value="{{request.form.translate}}">
+                {% if mode == 1 %}
+                    <input class="btn btn-default" type="submit" value="Çevir">
+                {% elif mode == -1 %}
+                    <input class="btn btn-default" type="submit" value="Translate">
+                {% endif %}
+            </form>
+        </div>
+        <div class='col-2 d-flex justify-content-center mt-5'>
+            <form action="" method ="post">
+                <button class="btn" name="switch", value="{{request.form.switch}}"><i class="fas fa-arrows-alt-h"></i></button>
+            </form>
+        </div>
+        <div class="col-5 form-group">
+            {% if mode == 1 %}
+                <h1>İngilizce</h1>
+            {% elif mode == -1 %}
+                <h1>Turkish</h1>
+            {% endif %}
+            <br>
+            <div class='translate form-control' style="word-wrap: break-word">
+                {% if translate %}
+                    <div style="color: black;">{{translate}}</div>                   
+                {% elif request.form['translate'] == "" and mode == 1 %}
+                    <div class='unselectable' style='color: rgb(110, 110, 110);'>Çeviri</div>  
+                {% elif request.form['translate'] == "" and mode == -1 %}
+                    <div class='unselectable' style='color: rgb(110, 110, 110);'>Translation</div>  
+                {% elif notFound and mode == 1 %}
+                    <div class='unselectable'>Sonuç bulunamadı </div>
+                {% elif notFound and mode == -1 %}
+                    <div class='unselectable'>No results found </div>
+                {% else %}
+                    {% if mode == 1%}
+                        <div class='unselectable' style='color: rgb(110, 110, 110);'>Çeviri</div>  
+                    {% else %}
+                        <div class='unselectable' style='color: rgb(110, 110, 110);'>Translation</div>  
+                    {% endif %}
+                {% endif %}                  
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

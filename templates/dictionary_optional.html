@@ -15,28 +15,21 @@
 {% endblock header %}
 
 {% block content %}
-<h1 class='mb-3'>Current Exchange Rates</h1>
+<h1 class='mb-3'>Dictionary</h1>
 <table id="dtBasicExample" class="table" width="100%">
-  <thead>
-    <tr>
-      <th class="th-sm">Currency Pair</th>
-      <th class="th-sm">Rate</th>
-    </tr>
-  </thead>
-  <tbody>
-      <tr>
-        <td>EUR-TRY</td>
-        <td>{{tr}}</td>      
-      </tr>
-    {% for k,v in rates.items() %}
-      {% if k != 'TRY' %}
+    <thead>
         <tr>
-          <td>{{k}}-TRY</td>
-          <td>{{v}}</td>
+            <th class="th-sm">Turkish</th>
+            <th class="th-sm">English</th>
         </tr>
-      {% endif %}
-    {% endfor %}
-  </tbody>
+    </thead>
+    <tbody>
+        {% for index, row in data.iterrows() %}
+            <tr>
+                <td>{{row['turkish']}}</td>
+                <td>{{row['english']}}</td>
+            </tr>
+        {% endfor %}
+    </tbody>
 </table>
-<h1>Last Update: {{last_update}}</h1>
 {% endblock content %}

@@ -1,6 +1,11 @@
 {% extends "layout.html" %}
 {% block content %}
   <main role="main" class="container">
+    {% with messages = get_flashed_messages()%}
+      {% if messages%}
+        <h3 style="border-width: 1px; ">{{message}}</h3>    
+      {% endif %}
+    {% endwith%}
     <div class="row">
       <div class="col-md-12">
         <h1>HOME PAGE</h1>
