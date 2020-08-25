@@ -111,7 +111,7 @@ def logs():
 def login():
     error = None
     if request.method == 'POST':
-        if request.form['password'] != 'q.q':
+        if request.form['password'] != 'mentörşip':
             error = 'Wrong password, try again.'
         else:
             session['logged_in'] = True

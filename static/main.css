@@ -1,7 +1,10 @@
 body {
   background: #fafafa;
   color: #333333;
-  margin-top: 5rem;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
 }
 
 
@@ -28,6 +31,9 @@ h1, h2, h3, h4, h5, h6 {
 .page-footer {
   background: #5f788a;
   color: #cbd5db;
+  height: auto;
+  width: 100%;
+  margin-top: auto ;
 }
 
 .translate{
